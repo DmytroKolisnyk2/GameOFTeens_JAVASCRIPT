@@ -119,7 +119,7 @@
                 </div>
             </div>
         </section>
-        <section class="question hidden-modal">
+        <section class="question modal hidden-modal">
             <h2 class="question__title">Расшифровка css?</h2>
             <form class="question__form">
                 <div class="question__form--label-wrapper">
@@ -127,15 +127,15 @@
                     <label class="question__form--label" for="question__form--answer1" id="question__form--label-1">Javascript</label>
                 </div>
                 <div class="question__form--label-wrapper">
-                    <input type="radio" class="question__form--variant" id="question__form--answer2" data-question-index="2" name="answer" value="css">
+                    <input type="radio" class="question__form--variant" id="question__form--answer2" data-question-index="2" name="answer" value="c#">
                     <label class="question__form--label" for="question__form--answer2" id="question__form--label-2">C#</label>
                 </div>
                 <div class="question__form--label-wrapper">
-                    <input type="radio" class="question__form--variant" id="question__form--answer3" data-question-index="3" name="answer" value="css">
+                    <input type="radio" class="question__form--variant" id="question__form--answer3" data-question-index="3" name="answer" value="python">
                     <label class="question__form--label" for="question__form--answer3" id="question__form--label-3">Python</label>
                 </div>
                 <div class="question__form--label-wrapper">
-                    <input type="radio" class="question__form--variant" id="question__form--answer4" data-question-index="4" name="answer" value="css">
+                    <input type="radio" class="question__form--variant" id="question__form--answer4" data-question-index="4" name="answer" value="cascading style sheets">
                     <label class="question__form--label" id="question__form--label-4" for="question__form--answer4">Cascading style sheets</label>
                 </div>
             </form>
@@ -147,6 +147,25 @@
                     <li class="question__controls-item"><button class="question__btn question__btn--arrow" data-value='right'>&#62;</button></li>
                 </ul>
             </div>
+         </section>
+      
+         <section class="results modal hidden-modal">
+            <div class="wrapper_results_diagrams">
+                <h2 class="results__percent">100% правильних відповідей</h2>
+                <h3 class="results_text_percent">Ти попав в яблучко - цей напрямок ідеально підходить для тебе</h3>
+        </div>
+        <canvas id="diagram"></canvas>
+        <div class="result_about_the_course_wrapper">
+            <h2 class="results_about_the_course_title">HTML / CSS</h2>
+            <p class="results_about_the_course">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati maiores sunt soluta repellendus voluptates ratione. Eum non voluptatibus obcaecati quaerat autem nobis necessitatibus voluptas beatae. Cum ex omnis nemo blanditiis culpa facere sequi ipsa veniam fuga pariatur labore architecto, sapiente aperiam necessitatibus sint cupiditate corporis dolores molestias velit recusandae tempora expedita unde dolor ipsum. Voluptatum eos provident rerum! Ipsa laborum repellat, possimus cum eveniet cupiditate fugiat nisi quod harum quasi totam neque aut omnis, autem incidunt cumque quas magni, eaque aliquam iure dolore perspiciatis? Facilis nisi, voluptatibus eos nihil perspiciatis corporis atque doloremque eius eaque possimus, illo quibusdam nostrum voluptates. Ullam blanditiis deserunt soluta, at et repudiandae. Aliquid a id labore minima, laudantium quaerat in ducimus ea, debitis quidem sunt corporis commodi ratione dolorum unde beatae doloribus cupiditate officia! Id ex, quibusdam non fugit possimus eius nesciunt magni sunt? Non quis quisquam repudiandae enim dolorem dolorum odio corporis vero itaque, rerum sunt tenetur rem recusandae amet dolores voluptatum dolore voluptatibus blanditiis consequuntur deserunt. Optio dignissimos dolores enim fugit quidem, illo expedita mollitia in aperiam! Alias itaque exercitationem sed dolorum repudiandae veritatis quod nulla eveniet tempora veniam, quasi vitae voluptatum ullam ab blanditiis ratione saepe id provident rerum quaerat ex maiores dicta qui accusamus! Distinctio, eum? Placeat nesciunt quia facere totam excepturi similique odio atque quas repudiandae cum nulla sint, unde quibusdam aspernatur exercitationem quidem ullam corporis laudantium. Quis quasi a veritatis voluptatem animi ut.</p>
+            </div>
+            <div class="result_btn_wrapper">
+                <button class="results__btn-text results_btn_menu" type="button">Menu</button>
+                <button class="results__btn-text results_btn_menu" type="button">restart test</button>
+        
+            </div>
+        </section>
+
         </section>
         <section class="menu hidden-modal">
             <div class="menu__content-wrapper">
@@ -166,6 +185,7 @@
         <audio data-volume="1" src="./music/won_sound.mp3" class="audio__won"></audio>
     </div> -->
     <script src="./js/script.js" type="module"></script>
+    <script src="./js/functions.js" type="module"></script>
 </body>
 
 </html>

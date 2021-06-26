@@ -94,3 +94,27 @@ document.querySelectorAll('.question__btn--arrow').forEach(item => {
 });
 
 document.querySelector('.question__submit').addEventListener('click',functions.onClickBtnSubmit);
+
+});
+var myCanvas = document.getElementById("diagram");
+// myCanvas.width = 300;
+// myCanvas.height = 300;
+
+var ctx = myCanvas.getContext("2d");
+
+
+
+var myAnswers = {
+    "right answers": 5,
+    "wrong answers": 5,
+};
+
+var myDougnutChart = new functions.Piechart(
+    {
+        canvas: diagram,
+        data: myAnswers,
+        colors: ["#2b2e4a", "#e84545"],
+        doughnutHoleSize: 0.5
+    }
+);
+myDougnutChart.draw()
