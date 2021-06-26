@@ -16,7 +16,8 @@
     <div class="wrapper__header__test_it hidden-modal">
         <header class="tic_tac__header">
             <div class="header__content">
-                <a target="_blank" href="https://github.com/DmytroKolisnyk2/GameOFTeens_JAVASCRIPT"> <img class="content__img" src="./img/logo.jpg" alt="logo_team" /></a>
+                <a target="_blank" href="https://github.com/DmytroKolisnyk2/GameOFTeens_JAVASCRIPT"> <img
+                        class="content__img" src="./img/logo.jpg" alt="logo_team" /></a>
                 <h1 class="content__title">it test by HOPE team</h1>
                 <h2 class="content__reset settings_btn--js">Налаштування</h2>
             </div>
@@ -24,15 +25,19 @@
     </div>
     <main class="main">
         <section class="start modal">
-            <button class="settings_btn settings_btn--js">
-                <img class="settings_btn_img" class="settings-modal__audio-ico hidden-modal" src="./img/logo.jpg"
-                    alt="logo_team" />
-            </button>
+            <div class="wrapper_btn_start">
+                <button class="settings_btn settings_btn--js">
+                    <img class="settings_btn_img" class="settings-modal__audio-ico hidden-modal" src="./img/logo.jpg"
+                        alt="logo_team" />
+                </button>
+                <button class="about_test">?</button>
+            </div>
             <div class="start__content-wrapper">
                 <h2 class="start_screen_title">IT тест від команди HOPE</h2>
                 <div class="start__controls-wrapper">
                     <button class="start__btn start__open-modal start__btn-text" type="button">почати</button>
-                    <button type="button" class="start__author start__author--js start__open-modal start__controls">Автори</button>
+                    <button type="button"
+                        class="start__author start__author--js start__open-modal start__controls">Автори</button>
                 </div>
             </div>
         </section>
@@ -123,46 +128,57 @@
             <h2 class="question__title">Расшифровка css?</h2>
             <form class="question__form">
                 <div class="question__form--label-wrapper">
-                    <input checked type="radio" class="question__form--variant" id="question__form--answer1" data-question-index="1" name="answer" value="1">
-                    <label class="question__form--label" for="question__form--answer1" id="question__form--label-1">Javascript</label>
+                    <input checked type="radio" class="question__form--variant" id="question__form--answer1"
+                        data-question-index="1" name="answer" value="1">
+                    <label class="question__form--label" for="question__form--answer1"
+                        id="question__form--label-1">Javascript</label>
                 </div>
                 <div class="question__form--label-wrapper">
-                    <input type="radio" class="question__form--variant" id="question__form--answer2" data-question-index="2" name="answer" value="2">
-                    <label class="question__form--label" for="question__form--answer2" id="question__form--label-2">C#</label>
+                    <input type="radio" class="question__form--variant" id="question__form--answer2"
+                        data-question-index="2" name="answer" value="2">
+                    <label class="question__form--label" for="question__form--answer2"
+                        id="question__form--label-2">C#</label>
                 </div>
                 <div class="question__form--label-wrapper">
-                    <input type="radio" class="question__form--variant" id="question__form--answer3" data-question-index="3" name="answer" value="3">
-                    <label class="question__form--label" for="question__form--answer3" id="question__form--label-3">Python</label>
+                    <input type="radio" class="question__form--variant" id="question__form--answer3"
+                        data-question-index="3" name="answer" value="3">
+                    <label class="question__form--label" for="question__form--answer3"
+                        id="question__form--label-3">Python</label>
                 </div>
                 <div class="question__form--label-wrapper">
-                    <input type="radio" class="question__form--variant" id="question__form--answer4" data-question-index="4" name="answer" value="4">
-                    <label class="question__form--label" id="question__form--label-4" for="question__form--answer4">Cascading style sheets</label>
+                    <input type="radio" class="question__form--variant" id="question__form--answer4"
+                        data-question-index="4" name="answer" value="4">
+                    <label class="question__form--label" id="question__form--label-4"
+                        for="question__form--answer4">Cascading style sheets</label>
                 </div>
             </form>
             <button type="question__submit" class="question__submit">Відповісти</button>
             <div class="question__buttons--wrapper">
                 <ul class="question__controls-wrapper">
-                    <li class="question__controls-item"><button class="question__btn question__btn--arrow" data-value='left'>&#60;</button></li>
-                    <li class="question__controls-item"><button class="question__btn question__btn--finish">Finish</button></li>
-                    <li class="question__controls-item"><button class="question__btn question__btn--arrow" data-value='right'>&#62;</button></li>
+                    <li class="question__controls-item"><button class="question__btn question__btn--arrow"
+                            data-value='left'>&#60;</button></li>
+                    <li class="question__controls-item"><button
+                            class="question__btn question__btn--finish">Finish</button></li>
+                    <li class="question__controls-item"><button class="question__btn question__btn--arrow"
+                            data-value='right'>&#62;</button></li>
                 </ul>
             </div>
-         </section>
-      
-         <section class="results modal hidden-modal">
+        </section>
+
+        <section class="results modal hidden-modal">
             <div class="wrapper_results_diagrams">
                 <h2 class="results__percent"><span class="results__percent--js">100</span>% правильних відповідей</h2>
                 <h3 class="results_text_percent">Ти попав в яблучко - цей напрямок ідеально підходить для тебе</h3>
-        </div>
-        <canvas id="diagram"></canvas>
-        <div class="result_about_the_course_wrapper">
-            <h2 class="results_about_the_course_title">HTML / CSS</h2>
-            <!-- <p class="results_about_the_course">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati maiores sunt soluta repellendus voluptates ratione. Eum non voluptatibus obcaecati quaerat autem nobis necessitatibus voluptas beatae. Cum ex omnis nemo blanditiis culpa facere sequi ipsa veniam fuga pariatur labore architecto, sapiente aperiam necessitatibus sint cupiditate corporis dolores molestias velit recusandae tempora expedita unde dolor ipsum. Voluptatum eos provident rerum! Ipsa laborum repellat, possimus cum eveniet cupiditate fugiat nisi quod harum quasi totam neque aut omnis, autem incidunt cumque quas magni, eaque aliquam iure dolore perspiciatis? Facilis nisi, voluptatibus eos nihil perspiciatis corporis atque doloremque eius eaque possimus, illo quibusdam nostrum voluptates. Ullam blanditiis deserunt soluta, at et repudiandae. Aliquid a id labore minima, laudantium quaerat in ducimus ea, debitis quidem sunt corporis commodi ratione dolorum unde beatae doloribus cupiditate officia! Id ex, quibusdam non fugit possimus eius nesciunt magni sunt? Non quis quisquam repudiandae enim dolorem dolorum odio corporis vero itaque, rerum sunt tenetur rem recusandae amet dolores voluptatum dolore voluptatibus blanditiis consequuntur deserunt. Optio dignissimos dolores enim fugit quidem, illo expedita mollitia in aperiam! Alias itaque exercitationem sed dolorum repudiandae veritatis quod nulla eveniet tempora veniam, quasi vitae voluptatum ullam ab blanditiis ratione saepe id provident rerum quaerat ex maiores dicta qui accusamus! Distinctio, eum? Placeat nesciunt quia facere totam excepturi similique odio atque quas repudiandae cum nulla sint, unde quibusdam aspernatur exercitationem quidem ullam corporis laudantium. Quis quasi a veritatis voluptatem animi ut.</p> -->
+            </div>
+            <canvas id="diagram"></canvas>
+            <div class="result_about_the_course_wrapper">
+                <h2 class="results_about_the_course_title">HTML / CSS</h2>
+                <!-- <p class="results_about_the_course">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati maiores sunt soluta repellendus voluptates ratione. Eum non voluptatibus obcaecati quaerat autem nobis necessitatibus voluptas beatae. Cum ex omnis nemo blanditiis culpa facere sequi ipsa veniam fuga pariatur labore architecto, sapiente aperiam necessitatibus sint cupiditate corporis dolores molestias velit recusandae tempora expedita unde dolor ipsum. Voluptatum eos provident rerum! Ipsa laborum repellat, possimus cum eveniet cupiditate fugiat nisi quod harum quasi totam neque aut omnis, autem incidunt cumque quas magni, eaque aliquam iure dolore perspiciatis? Facilis nisi, voluptatibus eos nihil perspiciatis corporis atque doloremque eius eaque possimus, illo quibusdam nostrum voluptates. Ullam blanditiis deserunt soluta, at et repudiandae. Aliquid a id labore minima, laudantium quaerat in ducimus ea, debitis quidem sunt corporis commodi ratione dolorum unde beatae doloribus cupiditate officia! Id ex, quibusdam non fugit possimus eius nesciunt magni sunt? Non quis quisquam repudiandae enim dolorem dolorum odio corporis vero itaque, rerum sunt tenetur rem recusandae amet dolores voluptatum dolore voluptatibus blanditiis consequuntur deserunt. Optio dignissimos dolores enim fugit quidem, illo expedita mollitia in aperiam! Alias itaque exercitationem sed dolorum repudiandae veritatis quod nulla eveniet tempora veniam, quasi vitae voluptatum ullam ab blanditiis ratione saepe id provident rerum quaerat ex maiores dicta qui accusamus! Distinctio, eum? Placeat nesciunt quia facere totam excepturi similique odio atque quas repudiandae cum nulla sint, unde quibusdam aspernatur exercitationem quidem ullam corporis laudantium. Quis quasi a veritatis voluptatem animi ut.</p> -->
             </div>
             <div class="result_btn_wrapper">
                 <button class="results__btn-text results_btn_menu" type="button">Меню</button>
                 <button class="results__btn-text results_btn_menu" type="button">Спробувати ще раз</button>
-        
+
             </div>
         </section>
 
@@ -171,10 +187,29 @@
             <div class="menu__content-wrapper">
                 <h2 class="menu__headline">Choose test</h2>
                 <div class="menu__test-selection-wrapper">
-                    <button data-section='1' type="button" class="select-btn--js test-selection__btn">JavaScript</button>
+                    <button data-section='1' type="button"
+                        class="select-btn--js test-selection__btn">JavaScript</button>
                     <button data-section='2' type="button" class="select-btn--js test-selection__btn">HTML/CSS</button>
                     <button data-section='3' type="button" class="select-btn--js test-selection__btn">Java</button>
                     <button data-section='4' type="button" class="select-btn--js test-selection__btn">Python</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-to-use" class="backdrop_how-to-use_modal modal hidden-modal">
+            <div class="how-to-use modal">
+                <div data-modal="how-to-use" class="how-to-use_close close-btn--js close-modal-btn">
+                    <picture><svg class="how-to-use-modal__close-btn">
+                            <use href="./img/symbol-defs.svg#icon-cross"></use>
+                        </svg></picture>
+                </div>
+                <h2 class="how-to-use__headline">Як використовувати сайт?</h2>
+                <div class="how-to-use__wrapper">
+                    <p class="how-to-use__text">First, click the "play" button. You will see a table where you need to
+                        select the number of cards and time. If you are not playing alone, go to the next "multiplayer"
+                        function, it is next to the "single player" function. You need to choose the number of cards and
+                        the number of players. Then click "start". You see the cards on the screen. You must find two
+                        identical cards for the time you have chosen.</p>
                 </div>
             </div>
         </section>
