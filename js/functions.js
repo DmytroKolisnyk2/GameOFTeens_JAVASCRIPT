@@ -42,6 +42,34 @@ export const makeQuestion = (section, questionIndex) => {
     document.querySelector('.question__counter').classList.remove('hidden-modal');
     document.querySelector('.question__counter').textContent = `${questionIndex}/${questions[section - 1].length}`;
 };
+
+export const onClickBtnArrow = (event) => {
+    if(event.target.dataset.value === 'right') {
+        if(+localStorage.getItem('question-index') === 10) {
+            return
+         }
+    localStorage.setItem('question-index', +localStorage.getItem('question-index') + 1);
+      return makeQuestion(+localStorage.getItem('test-type'), +localStorage.getItem('question-index'));
+    }
+    if(event.target.dataset.value === 'left') {
+        if(+localStorage.getItem('question-index') === 1) {
+            return
+         }
+        localStorage.setItem('question-index', +localStorage.getItem('question-index') - 1);
+        console.log(+localStorage.getItem('question-index'));
+       return makeQuestion(+localStorage.getItem('test-type'), +localStorage.getItem('question-index'));
+    }
+};
+
+export const onClickBtnSubmit = () => {
+    if(+localStorage.getItem('question-index') === 10) {
+        return
+     }
+    localStorage.setItem('question-index', +localStorage.getItem('question-index') + 1);
+    return makeQuestion(+localStorage.getItem('test-type'), +localStorage.getItem('question-index'));
+    
+};
+
 function drawPieSlice(ctx, centerX, centerY, radius, startAngle, endAngle, color) {
     ctx.fillStyle = color;
     ctx.beginPath();
