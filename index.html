@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,9 +10,119 @@
     <title>Hackathon by HOPE Team</title>
 </head>
 
-<body>
-    <main class="main">
-        <section class="menu">
+   <body>
+      <div class="wrapper__header__test_it hidden-modal">
+         <header class="tic_tac__header">
+            <div class="header__content">
+               <a target="_blank" href="https://github.com/DmytroKolisnyk2/test-hackathon-2.0"> <img class="content__img" src="./img/logo.jpg" alt="logo_team" /></a>
+               <h1 class="content__title">it test by HOPE team</h1>
+               <h2 class="content__reset">Restart</h2>
+            </div>
+         </header>
+      </div>
+      <main class="main">
+         <!-- <section class="game hidden-modal">
+            <div class="game__content-wrapper">
+               <ul class="table"></ul>
+               <h3 class="game__player-move">Player-<span class="game__player-move--js">1</span> move</h3>
+            </div>
+         </section> -->
+         <section class="start modal">
+            <button class="settings_btn settings_btn--js">
+               <img class="settings_btn_img" class="settings-modal__audio-ico hidden-modal" src="./img/logo.jpg" alt="logo_team" />
+            </button>
+            <div class="start__content-wrapper">
+               <h2 class="start_screen_title">it test by HOPE team</h2>
+               <div class="start__controls-wrapper">
+                  <button class="start__btn start__open-modal start__btn-text" type="button">play</button>
+                  <button type="button" class="start__author start__author--js start__open-modal start__controls">Authors</button>
+               </div>
+            </div>
+         </section>
+         <section class="backdrop_authors_modal modal hidden-modal" id="authors">
+            <div class="authors-modal modal">
+               <div data-modal="authors" class="authors_close close-btn--js">
+                  <svg class="authors-modal__close-btn">
+                     <use href="./img/symbol-defs.svg#icon-cross"></use>
+                  </svg>
+               </div>
+               <div class="authors_content">
+                  <h2 class="authors_title">authors of this game</h2>
+                  <div class="authors_wrapper">
+                     <div class="authors_card">
+                        <picture>
+                           <source srcset="./img/max.webp" type="image/webp" />
+                           <img class="authors_img" src="./img/max.jpg" alt="Max" />
+                        </picture>
+                        <h4 class="authors_name">Max Popsuy</h4>
+                        <p class="authors_text">12 years old. Live in Kiev.</p>
+                     </div>
+                     <div class="authors_card">
+                        <picture>
+                           <source srcset="./img/authors_Mari.webp" type="image/webp" />
+                           <img class="authors_img" src="./img/authors_Mari.png" alt="Mari" />
+                        </picture>
+                        <h4 class="authors_name">Mariia Hrypych</h4>
+                        <p class="authors_text">HR manager</p>
+                     </div>
+                     <div class="authors_card">
+                        <picture>
+                           <source srcset="./img/authors_Dmytro.webp" type="image/webp" />
+                           <img class="authors_img" src="./img/authors_Dmytro.png" alt="Dmytro" />
+                        </picture>
+                        <h4 class="authors_name">Kolisnyk Dmytro</h4>
+                        <p class="authors_text">TeamLead. 16 years old.</p>
+                     </div>
+                     <div class="authors_card">
+                        <picture>
+                           <source srcset="./img/Igor.webp" type="image/webp" />
+                           <img class="authors_img" src="./img/igor.jpg" alt="Igor" />
+                        </picture>
+                        <h4 class="authors_name">Ihor Yakibiuk</h4>
+                        <p class="authors_text">Man who study Front_End developing.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="authors_footer">
+                  <a target="_blank" href="https://github.com/DmytroKolisnyk2/test-hackathon-2.0">
+                     <picture>
+                        <source srcset="./img/logo.ico" type="image/webp" />
+                        <img class="authors-footer__img" src="./img/logo.ico" alt="logo" />
+                     </picture>
+                  </a>
+                  <p class="authors_footer__text">2021 HOPE Team &#169; all rights reserved</p>
+               </div>
+            </div>
+         </section>
+
+         <section class="backdrop_settings_modal modal hidden-modal" id="settings">
+            <div class="settings-modal modal">
+               <svg class="settings-modal__close-btn close-btn--js" data-modal="settings">
+                  <use href="./img/symbol-defs.svg#icon-cross"></use>
+               </svg>
+
+               <h2 class="settings-modal__headline">Settings</h2>
+               <h3 class="settings-modal__caption">Sound</h3>
+               <div class="settings-modal__audio-wrapper">
+                  <svg id="high" class="settings-modal__audio-ico">
+                     <use href="./img/symbol-defs.svg#icon-volume-high"></use>
+                  </svg>
+                  <svg id="mute" class="settings-modal__audio-ico hidden-modal">
+                     <use href="./img/symbol-defs.svg#icon-volume-mute"></use>
+                  </svg>
+
+                  <input type="range" min="0" max="20" class="settings-modal__audio-range" />
+               </div>
+               <h3 class="settings-modal__caption">Background</h3>
+               <div class="settings-modal__background-wrapper">
+                  <img src="./img/bg1.jpg" data-bg="1" alt="Background-img" class="settings-modal__background" />
+                  <img src="./img/bg2.jpg" data-bg="2" alt="Background-img" class="settings-modal__background" />
+                  <img src="./img/bg3.jpg" data-bg="3" alt="Background-img" class="settings-modal__background" />
+                  <img src="./img/bg4.jpg" data-bg="4" alt="Background-img" class="settings-modal__background" />
+               </div>
+            </div>
+         </section>
+      <section class="menu">
             <div class="menu__content-wrapper">
                 <h2 class="menu__headline">Choose test</h2>
                 <div class="menu__test-selection-wrapper">
@@ -24,8 +133,8 @@
                 </div>
             </div>
         </section>
-    </main>
-    <script src="./js/script.js" type="module"></script>
-</body>
-
+      
+      </main>
+      <script src="./js/script.js" type="module"></script>
+   </body>
 </html>
