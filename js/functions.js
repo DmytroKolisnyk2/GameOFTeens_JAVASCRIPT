@@ -1,3 +1,21 @@
+const answersArray = ["", "", "", "", "", "", "", "", "", ""];
+let questionIndex = 0;
+export const addAnswer = function () {
+    const inputRadios = document.querySelectorAll('.question__form--variant');
+
+    for (let i = 0, length = inputRadios.length; i < length; i++) {
+        if (inputRadios[i].checked) {
+            localStorage.setItem("index", questionIndex);
+            answersArray.splice(localStorage.getItem("index"), 1, inputRadios[i].value);
+            localStorage.setItem("answers", answersArray);
+            console.log(answersArray);
+            questionIndex++;
+            break;
+        }
+    }
+}
+
+document.querySelector('.question__submit').addEventListener('click', addAnswer);
 import questions from './arrayTests.js';
 const questionRef = document.querySelector('.question');
 export const makeQuestion = (section, questionIndex) => {
@@ -5,25 +23,53 @@ export const makeQuestion = (section, questionIndex) => {
     const questionPath = questions[section - 1][questionIndex - 1];
     questionRef.querySelector('.question__title').textContent = questionPath.headlineOfQuestion;
     const formString = `<div class="question__form--label-wrapper">
-                <input checked type="radio" class="question__form--variant" id="question__form--answer1" data-question-index="1" name="answer" value="css">
+                <input checked type="radio" class="question__form--variant" id="question__form--answer1" data-question-index="1" name="answer" value="1">
                 <label class="question__form--label" for="question__form--answer1" id="question__form--label-1">${questionPath.answer1}</label>
             </div>
             <div class="question__form--label-wrapper">
-                <input type="radio" class="question__form--variant" id="question__form--answer2" data-question-index="2" name="answer" value="css">
+                <input type="radio" class="question__form--variant" id="question__form--answer2" data-question-index="2" name="answer" value="2">
                 <label class="question__form--label" for="question__form--answer2" id="question__form--label-2">${questionPath.answer2}</label>
             </div>
             <div class="question__form--label-wrapper">
-                <input type="radio" class="question__form--variant" id="question__form--answer3" data-question-index="3" name="answer" value="css">
+                <input type="radio" class="question__form--variant" id="question__form--answer3" data-question-index="3" name="answer" value="3">
                 <label class="question__form--label" for="question__form--answer3" id="question__form--label-3">${questionPath.answer3}</label>
             </div>
             <div class="question__form--label-wrapper">
-                <input type="radio" class="question__form--variant" id="question__form--answer4" data-question-index="4" name="answer" value="css">
+                <input type="radio" class="question__form--variant" id="question__form--answer4" data-question-index="4" name="answer" value="4">
                 <label class="question__form--label" id="question__form--label-4" for="question__form--answer4">${questionPath.answer4}</label>
             </div>`;
     questionRef.querySelector('.question__form').innerHTML = formString;
     document.querySelector('.question__counter').classList.remove('hidden-modal');
     document.querySelector('.question__counter').textContent = `${questionIndex}/${questions[section - 1].length}`;
 };
+
+export const onClickBtnArrow = (event) => {
+    if (event.target.dataset.value === 'right') {
+        if (+localStorage.getItem('question-index') === 10) {
+            return
+        }
+        localStorage.setItem('question-index', +localStorage.getItem('question-index') + 1);
+        return makeQuestion(+localStorage.getItem('test-type'), +localStorage.getItem('question-index'));
+    }
+    if (event.target.dataset.value === 'left') {
+        if (+localStorage.getItem('question-index') === 1) {
+            return
+        }
+        localStorage.setItem('question-index', +localStorage.getItem('question-index') - 1);
+        console.log(+localStorage.getItem('question-index'));
+        return makeQuestion(+localStorage.getItem('test-type'), +localStorage.getItem('question-index'));
+    }
+};
+
+export const onClickBtnSubmit = () => {
+    if (+localStorage.getItem('question-index') === 10) {
+        return
+    }
+    localStorage.setItem('question-index', +localStorage.getItem('question-index') + 1);
+    return makeQuestion(+localStorage.getItem('test-type'), +localStorage.getItem('question-index'));
+
+};
+
 function drawPieSlice(ctx, centerX, centerY, radius, startAngle, endAngle, color) {
     ctx.fillStyle = color;
     ctx.beginPath();
@@ -39,17 +85,17 @@ export const Piechart = function (options) {
     this.colors = options.colors;
 
     this.draw = function () {
-        var total_value = 0;
-        var color_index = 0;
-        for (var categ in this.options.data) {
-            var val = this.options.data[categ];
+        let total_value = 0;
+        let color_index = 0;
+        for (const categ in this.options.data) {
+            let val = this.options.data[categ];
             total_value += val;
         }
 
-        var start_angle = 0;
-        for (categ in this.options.data) {
-            val = this.options.data[categ];
-            var slice_angle = 2 * Math.PI * val / total_value;
+        let start_angle = 0;
+        for (const categ in this.options.data) {
+            let val = this.options.data[categ];
+            const slice_angle = 2 * Math.PI * val / total_value;
 
             drawPieSlice(
                 this.ctx,

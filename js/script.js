@@ -62,7 +62,7 @@ if (refs.volume === 0) {
     document.querySelector("#high").classList.add("hidden-modal");
 }
 document.querySelector(".settings-modal__background-wrapper").children[+window.localStorage.getItem("bg") - 1].classList.add("settings-modal__background--active");
-[...document.querySelector(".audio").children].forEach((audio) => (audio.volume = +audio.dataset.volume * refs.volume));
+// [...document.querySelector(".audio").children].forEach((audio) => (audio.volume = +audio.dataset.volume * refs.volume));
 document.querySelector(".settings-modal__audio-range").addEventListener("input", (event) => {
     window.localStorage.setItem("volume", event.target.value / 20);
     if (+event.target.value === 0) {
@@ -85,21 +85,30 @@ document.querySelector('.menu__test-selection-wrapper').addEventListener('click'
     if (event.target === event.currentTarget) return;
     document.querySelector('.menu').classList.add('hidden-modal');
     functions.makeQuestion(+event.target.dataset.section, 1);
+    localStorage.setItem('question-index', 1);
+    localStorage.setItem('test-type', +event.target.dataset.section);
+} );
+
+document.querySelectorAll('.question__btn--arrow').forEach(item => {
+    item.addEventListener('click',functions.onClickBtnArrow);
 });
-var myCanvas = document.getElementById("diagram");
-// myCanvas.width = 300;
-// myCanvas.height = 300;
 
-var ctx = myCanvas.getContext("2d");
+document.querySelector('.question__submit').addEventListener('click',functions.onClickBtnSubmit);
+
+const myCanvas = document.getElementById("diagram");
+myCanvas.width = 300;
+myCanvas.height = 300;
+
+const ctx = myCanvas.getContext("2d");
 
 
 
-var myAnswers = {
-    "right answers": 5,
-    "wrong answers": 5,
+const myAnswers = {
+    "right answers": 3,
+    "wrong answers": 7,
 };
 
-var myDougnutChart = new functions.Piechart(
+const myDougnutChart = new functions.Piechart(
     {
         canvas: diagram,
         data: myAnswers,
