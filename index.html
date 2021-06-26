@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <span class="question__counter hidden-modal">9/10</span>
     <div class="wrapper__header__test_it hidden-modal">
         <header class="tic_tac__header">
             <div class="header__content">
@@ -28,9 +29,10 @@
                <h3 class="game__player-move">Player-<span class="game__player-move--js">1</span> move</h3>
             </div>
          </section> -->
-        <section class="start modal">
+        <section class="start modal hidden-modal">
             <button class="settings_btn settings_btn--js">
-               <img class="settings_btn_img" class="settings-modal__audio-ico hidden-modal" src="./img/logo.jpg" alt="logo_team" />
+                <img class="settings_btn_img" class="settings-modal__audio-ico hidden-modal" src="./img/logo.jpg"
+                    alt="logo_team" />
             </button>
             <div class="start__content-wrapper">
                 <h2 class="start_screen_title">IT test by HOPE team</h2>
@@ -44,8 +46,8 @@
             <div class="authors-modal modal">
                 <div data-modal="authors" class="authors_close close-btn--js">
                     <svg class="authors-modal__close-btn">
-                     <use href="./img/symbol-defs.svg#icon-cross"></use>
-                  </svg>
+                        <use href="./img/symbol-defs.svg#icon-cross"></use>
+                    </svg>
                 </div>
                 <div class="authors_content">
                     <h2 class="authors_title">authors of this game</h2>
@@ -99,18 +101,18 @@
         <section class="backdrop_settings_modal modal hidden-modal" id="settings">
             <div class="settings-modal modal">
                 <svg class="settings-modal__close-btn close-btn--js" data-modal="settings">
-                  <use href="./img/symbol-defs.svg#icon-cross"></use>
-               </svg>
+                    <use href="./img/symbol-defs.svg#icon-cross"></use>
+                </svg>
 
                 <h2 class="settings-modal__headline">Settings</h2>
                 <h3 class="settings-modal__caption">Sound</h3>
                 <div class="settings-modal__audio-wrapper">
                     <svg id="high" class="settings-modal__audio-ico">
-                     <use href="./img/symbol-defs.svg#icon-volume-high"></use>
-                  </svg>
+                        <use href="./img/symbol-defs.svg#icon-volume-high"></use>
+                    </svg>
                     <svg id="mute" class="settings-modal__audio-ico hidden-modal">
-                     <use href="./img/symbol-defs.svg#icon-volume-mute"></use>
-                  </svg>
+                        <use href="./img/symbol-defs.svg#icon-volume-mute"></use>
+                    </svg>
 
                     <input type="range" min="0" max="20" class="settings-modal__audio-range" />
                 </div>
@@ -127,7 +129,7 @@
             <h2 class="question__title">Расшифровка css?</h2>
             <form class="question__form">
                 <div class="question__form--label-wrapper">
-                    <input type="radio" class="question__form--variant" id="question__form--answer1" data-question-index="1" name="answer" value="css">
+                    <input checked type="radio" class="question__form--variant" id="question__form--answer1" data-question-index="1" name="answer" value="css">
                     <label class="question__form--label" for="question__form--answer1" id="question__form--label-1">Javascript</label>
                 </div>
                 <div class="question__form--label-wrapper">
@@ -152,14 +154,14 @@
                 </ul>
             </div>
         </section>
-        <section class="menu hidden-modal">
+        <section class="menu">
             <div class="menu__content-wrapper">
                 <h2 class="menu__headline">Choose test</h2>
                 <div class="menu__test-selection-wrapper">
-                    <button type="button" class="select-btn--js test-selection__btn">HTML/CSS</button>
-                    <button type="button" class="select-btn--js test-selection__btn">JavaScript</button>
-                    <button type="button" class="select-btn--js test-selection__btn">Java</button>
-                    <button type="button" class="select-btn--js test-selection__btn">Python</button>
+                    <button data-section='1' type="button" class="select-btn--js test-selection__btn">JavaScript</button>
+                    <button data-section='2' type="button" class="select-btn--js test-selection__btn">HTML/CSS</button>
+                    <button data-section='3' type="button" class="select-btn--js test-selection__btn">Java</button>
+                    <button data-section='4' type="button" class="select-btn--js test-selection__btn">Python</button>
                 </div>
             </div>
         </section>

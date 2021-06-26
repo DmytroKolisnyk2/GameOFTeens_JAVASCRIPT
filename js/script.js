@@ -81,3 +81,8 @@ document.querySelector(".settings-modal__background-wrapper").addEventListener("
     event.target.classList.add("settings-modal__background--active");
     document.querySelector(".main").style.backgroundImage = `url(./img/bg${event.target.dataset.bg}.jpg)`;
 });
+document.querySelector('.menu__test-selection-wrapper').addEventListener('click', (event) => {
+    if (event.target === event.currentTarget) return;
+    document.querySelector('.menu').classList.add('hidden-modal');
+    functions.makeQuestion(+event.target.dataset.section, 1);
+} );
