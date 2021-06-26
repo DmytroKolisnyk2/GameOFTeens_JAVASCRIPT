@@ -52,7 +52,17 @@
     margin-bottom: 35px;
     margin-top: 10px;
 }
-
+.question__form-input {
+    position: fixed;
+    padding: 5px;
+    border-radius: var(--main-br);
+    font-size: 26px;
+    font-weight: 700;
+    font-family: var(--main-font);
+    color: var(--main-grey);
+    background-color: var(--main-purple);
+    cursor: pointer;
+}
 .question__submit {
     margin: 0 auto;
     display: flex;
