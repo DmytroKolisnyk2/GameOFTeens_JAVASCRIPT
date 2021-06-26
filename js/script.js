@@ -85,4 +85,26 @@ document.querySelector('.menu__test-selection-wrapper').addEventListener('click'
     if (event.target === event.currentTarget) return;
     document.querySelector('.menu').classList.add('hidden-modal');
     functions.makeQuestion(+event.target.dataset.section, 1);
-} );
+});
+var myCanvas = document.getElementById("diagram");
+// myCanvas.width = 300;
+// myCanvas.height = 300;
+
+var ctx = myCanvas.getContext("2d");
+
+
+
+var myAnswers = {
+    "right answers": 5,
+    "wrong answers": 5,
+};
+
+var myDougnutChart = new functions.Piechart(
+    {
+        canvas: diagram,
+        data: myAnswers,
+        colors: ["#2b2e4a", "#e84545"],
+        doughnutHoleSize: 0.5
+    }
+);
+myDougnutChart.draw()
