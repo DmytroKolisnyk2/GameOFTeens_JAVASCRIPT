@@ -87,13 +87,13 @@ document.querySelector('.menu__test-selection-wrapper').addEventListener('click'
     functions.makeQuestion(+event.target.dataset.section, 1);
     localStorage.setItem('question-index', 1);
     localStorage.setItem('test-type', +event.target.dataset.section);
-} );
-
-document.querySelectorAll('.question__btn--arrow').forEach(item => {
-    item.addEventListener('click',functions.onClickBtnArrow);
 });
 
-document.querySelector('.question__submit').addEventListener('click',functions.onClickBtnSubmit);
+document.querySelectorAll('.question__btn--arrow').forEach(item => {
+    item.addEventListener('click', functions.onClickBtnArrow);
+});
+
+document.querySelector('.question__submit').addEventListener('click', functions.onClickBtnSubmit);
 
 const myCanvas = document.getElementById("diagram");
 myCanvas.width = 300;
@@ -118,5 +118,15 @@ const myDougnutChart = new functions.Piechart(
 );
 myDougnutChart.draw()
 document.querySelector('.question__btn--finish').addEventListener('click', functions.checkFinal);
-// document.querySelector('.start').classList.add('hidden-modal');
+document.querySelector('.results_btn_menu--restart').addEventListener('click', () => {
+    document.querySelector('.results').classList.add('hidden-modal');
+    functions.makeQuestion(localStorage.getItem('test-type'), 1);
+    localStorage.setItem('question-index', 1);
+});
+document.querySelector('.results_btn_menu--menu').addEventListener('click', () => {
+    document.querySelector('.results').classList.add('hidden-modal');
+    document.querySelector('.menu').classList.remove('hidden-modal');
+});
+document.querySelector('.start').classList.add('hidden-modal');
+document.querySelector('.results').classList.remove('hidden-modal');
 // functions.makeQuestion(1, 1);

@@ -8,6 +8,7 @@
     background-color: var(--main-blue);
     border-radius: var(--main-br);
     padding-top: 15px;
+   transition: var(--main-animation);
 }
 
 .question__form {
