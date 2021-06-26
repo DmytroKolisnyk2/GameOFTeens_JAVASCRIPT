@@ -42,3 +42,12 @@ export const onClickBtnArrow = (event) => {
        return makeQuestion(+localStorage.getItem('test-type'), +localStorage.getItem('question-index'));
     }
 };
+
+export const onClickBtnSubmit = () => {
+    if(+localStorage.getItem('question-index') === 10) {
+        return
+     }
+    localStorage.setItem('question-index', +localStorage.getItem('question-index') + 1);
+    return makeQuestion(+localStorage.getItem('test-type'), +localStorage.getItem('question-index'));
+    
+};

@@ -92,3 +92,5 @@ document.querySelector('.menu__test-selection-wrapper').addEventListener('click'
 document.querySelectorAll('.question__btn--arrow').forEach(item => {
     item.addEventListener('click',functions.onClickBtnArrow);
 });
+
+document.querySelector('.question__submit').addEventListener('click',functions.onClickBtnSubmit);
