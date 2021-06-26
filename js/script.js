@@ -87,6 +87,19 @@ document.querySelector('.menu__test-selection-wrapper').addEventListener('click'
     functions.makeQuestion(+event.target.dataset.section, 1);
     localStorage.setItem('question-index', 1);
     localStorage.setItem('test-type', +event.target.dataset.section);
+    if (+event.target.dataset.section === 1) {
+        document.querySelector('.results_about_the_course_title').textContent = "JavaScript";
+    }
+    if (+event.target.dataset.section === 2) {
+        document.querySelector('.results_about_the_course_title').textContent = "Html / Css";
+    }
+    if (+event.target.dataset.section === 3) {
+        document.querySelector('.results_about_the_course_title').textContent = "Java";
+    }
+    console.log(event.target.dataset.section);
+    if (+event.target.dataset.section === 4) {
+        document.querySelector('.results_about_the_course_title').innerHTML = "Python";
+    }
 });
 
 document.querySelectorAll('.question__btn--arrow').forEach(item => {
