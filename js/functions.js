@@ -8,8 +8,6 @@ export const addAnswer = function () {
         if (inputRadios[i].checked) {
             answersArray.splice(localStorage.getItem("question-index") - 1, 1, inputRadios[i].value);
             localStorage.setItem("answers", JSON.stringify(answersArray));
-            // console.log(JSON.parse(answersArray));
-            questionIndex++;
             break;
         }
     }
@@ -140,4 +138,3 @@ export const checkFinal = () => {
     document.querySelector('.results').classList.remove('hidden-modal');
     document.querySelector('.question__counter').classList.add('hidden-modal');
 };
-
