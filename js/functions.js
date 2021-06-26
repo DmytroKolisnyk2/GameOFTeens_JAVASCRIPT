@@ -1,3 +1,5 @@
+import questions from './arrayTests.js';
+
 const answersArray = ["", "", "", "", "", "", "", "", "", ""];
 let questionIndex = 0;
 export const addAnswer = function () {
@@ -5,10 +7,9 @@ export const addAnswer = function () {
 
     for (let i = 0, length = inputRadios.length; i < length; i++) {
         if (inputRadios[i].checked) {
-            localStorage.setItem("index", questionIndex);
-            answersArray.splice(localStorage.getItem("index"), 1, inputRadios[i].value);
-            localStorage.setItem("answers", answersArray);
-            console.log(answersArray);
+            answersArray.splice(localStorage.getItem("question-index") - 1, 1, inputRadios[i].value);
+            localStorage.setItem("answers", JSON.stringify(answersArray));
+            // console.log(JSON.parse(answersArray));
             questionIndex++;
             break;
         }
@@ -16,7 +17,6 @@ export const addAnswer = function () {
 }
 
 document.querySelector('.question__submit').addEventListener('click', addAnswer);
-import questions from './arrayTests.js';
 const questionRef = document.querySelector('.question');
 export const makeQuestion = (section, questionIndex) => {
     questionRef.classList.remove('hidden-modal');
@@ -56,7 +56,6 @@ export const onClickBtnArrow = (event) => {
             return
         }
         localStorage.setItem('question-index', +localStorage.getItem('question-index') - 1);
-        console.log(+localStorage.getItem('question-index'));
         return makeQuestion(+localStorage.getItem('test-type'), +localStorage.getItem('question-index'));
     }
 };
@@ -113,3 +112,16 @@ export const Piechart = function (options) {
 
     }
 }
+export const checkFinal = () => {
+    const answersArray = JSON.parse(localStorage.getItem('answers'));
+    // const answersArray = ["3", "3", "3", "3", "3", "3", "3", "3", "3", "3"];
+    const testType = localStorage.getItem('test-type');
+    const result = answersArray.reduce((acc, item, index) => {
+        if (item === questions[testType - 1][index].rightAnswer) acc++;
+        return acc;
+    }, 0);
+    document.querySelector('.results__percent--js').textContent = `${result / questions[testType - 1].length*100}`;
+    document.querySelector('.question').classList.add('hidden-modal');
+    document.querySelector('.results').classList.remove('hidden-modal');
+};
+

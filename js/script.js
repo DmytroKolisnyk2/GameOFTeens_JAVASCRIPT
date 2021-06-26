@@ -117,3 +117,6 @@ const myDougnutChart = new functions.Piechart(
     }
 );
 myDougnutChart.draw()
+document.querySelector('.question__btn--finish').addEventListener('click', functions.checkFinal);
+// document.querySelector('.start').classList.add('hidden-modal');
+// functions.makeQuestion(1, 1);
