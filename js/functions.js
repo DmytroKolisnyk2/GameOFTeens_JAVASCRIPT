@@ -113,7 +113,6 @@ export const Piechart = function (options) {
 }
 export const checkFinal = () => {
     const answersArray = JSON.parse(localStorage.getItem('answers'));
-    // const answersArray = ["3", "3", "3", "3", "3", "3", "3", "3", "3", "3"];
     const testType = localStorage.getItem('test-type');
     const result = answersArray.reduce((acc, item, index) => {
         if (item === questions[testType - 1][index].rightAnswer) acc++;
