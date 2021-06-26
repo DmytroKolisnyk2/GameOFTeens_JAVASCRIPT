@@ -114,14 +114,30 @@ export const Piechart = function (options) {
 export const checkFinal = () => {
     const answersArray = JSON.parse(localStorage.getItem('answers'));
     const testType = localStorage.getItem('test-type');
+    const results_textRef = document.querySelector('.results_text_percent');
     const result = answersArray.reduce((acc, item, index) => {
         if (item === questions[testType - 1][index].rightAnswer) acc++;
         return acc;
     }, 0);
-    document.querySelector('.results__percent--js').textContent = `${Math.round(result / questions[testType - 1].length*100)}`;
+    const percentCorrectAnswers = Math.round(result / questions[testType - 1].length*100);
+    if(percentCorrectAnswers === 100) {
+        results_textRef.textContent = 'Ти дивився відповіді в інтернеті, чи це твоя друга мова?';
+    }
+    if(percentCorrectAnswers === 80 || percentCorrectAnswers === 90) {
+        results_textRef.textContent = 'Ти молодець! Майже всі відповіді вірні';
+    }
+    if(percentCorrectAnswers === 60 || percentCorrectAnswers === 70) {
+        results_textRef.textContent = 'Непогано, але в наступний раз старайся краще';
+    }
+    if(percentCorrectAnswers === 40 || percentCorrectAnswers === 50) {
+        results_textRef.textContent = 'Не переживай, спробуй пройти тест ще раз';
+    }
+    if(percentCorrectAnswers <= 40) {
+        results_textRef.textContent = 'Ти писав наугад, чи як? Іди почитай теорію і спробуй ще раз';
+    }
+    document.querySelector('.results__percent--js').textContent = `${percentCorrectAnswers}`;
     document.querySelector('.question').classList.add('hidden-modal');
     document.querySelector('.results').classList.remove('hidden-modal');
     document.querySelector('.question__counter').classList.add('hidden-modal');
-
 };
 
