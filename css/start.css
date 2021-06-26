@@ -276,6 +276,16 @@
       height: 35px;
    }
 
+   .about_test {
+      width: 65px;
+       height: 65px;
+       font-size: 45px;
+   }
+
+   .wrapper_btn_start {
+      width: 170px;
+   }
+
    .settings_btn_img {
       width: 65px;
       height: 65px;
@@ -484,6 +494,16 @@
    .settings_btn_img {
       width: 55px;
       height: 55px;
+   }
+
+   .about_test {
+      width: 55px;
+       height: 55px;
+       font-size: 35px;
+   }
+
+   .wrapper_btn_start {
+      width: 130px;
    }
    .settings-modal__close-btn {
       top: 5px;
