@@ -1,7 +1,7 @@
 .how-to-use {
     background-color: var(--main-grey);
     border: 1px #000 solid;
-    max-width: 900px;
+    max-width: 600px;
     width: 80vw;
     text-align: center;
     padding: 0 32px 32px;
@@ -22,9 +22,9 @@
 }
 
 .how-to-use-modal__close-btn {
-    position: absolute;
-    top: 5%;
-    right: 5%;
+    position: fixed;
+    top: -3px;
+    right: 0;
     height: 45px;
     width: 45px;
     fill: red;
@@ -93,7 +93,7 @@
     }
 }
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:700px) {
     .how-to-use__text {
         font-size: 16px
     }
@@ -101,7 +101,7 @@
         padding: 0 16px 16px
     }
     .how-to-use__headline {
-        font-size: 30px;
+        font-size: 20px;
         margin: 16px auto 12px
     }
     .how-to-use__close>img {
@@ -110,6 +110,9 @@
 }
 
 @media screen and (max-width:320px) {
+    .how-to-use__headline {
+        font-size: 15px;
+    }
     .how-to-use__wrapper {
         justify-content: center
     }
