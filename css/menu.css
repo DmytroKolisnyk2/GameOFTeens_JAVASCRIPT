@@ -11,6 +11,7 @@
 }
 
 .menu__content-wrapper {
+    padding-top: 80px;
     width: 100%;
 }
 
@@ -37,12 +38,13 @@
     border-radius: var(--main-br);
     margin: 20px;
     width: calc(50% - 40px);
-    height: 200px;
+    height: 180px;
     font-size: 50px;
     box-shadow: var(--main-shadow);
     position: relative;
     color: var(--main-maroon);
     background-color: var(--main-grey);
+    transition: var(--main-animation);
 }
 
 .test-selection__btn:active {
