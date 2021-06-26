@@ -122,7 +122,7 @@ export const checkFinal = () => {
     document.querySelector('.results__percent--js').textContent = `${Math.round(result / questions[testType - 1].length*100)}`;
     document.querySelector('.question').classList.add('hidden-modal');
     document.querySelector('.results').classList.remove('hidden-modal');
-    questionRef.classList.add('hidden-modal');
+    document.querySelector('.question__counter').classList.add('hidden-modal');
 
 };
 
