@@ -8,8 +8,6 @@ export const addAnswer = function () {
         if (inputRadios[i].checked) {
             answersArray.splice(localStorage.getItem("question-index") - 1, 1, inputRadios[i].value);
             localStorage.setItem("answers", JSON.stringify(answersArray));
-            // console.log(JSON.parse(answersArray));
-            questionIndex++;
             break;
         }
     }
@@ -118,10 +116,8 @@ export const checkFinal = () => {
         if (item === questions[testType - 1][index].rightAnswer) acc++;
         return acc;
     }, 0);
-    document.querySelector('.results__percent--js').textContent = `${Math.round(result / questions[testType - 1].length*100)}`;
+    document.querySelector('.results__percent--js').textContent = `${Math.round(result / questions[testType - 1].length * 100)}`;
     document.querySelector('.question').classList.add('hidden-modal');
     document.querySelector('.results').classList.remove('hidden-modal');
     document.querySelector('.question__counter').classList.add('hidden-modal');
-
 };
-
