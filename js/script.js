@@ -95,21 +95,20 @@ document.querySelectorAll('.question__btn--arrow').forEach(item => {
 
 document.querySelector('.question__submit').addEventListener('click',functions.onClickBtnSubmit);
 
-});
-var myCanvas = document.getElementById("diagram");
-// myCanvas.width = 300;
-// myCanvas.height = 300;
+const myCanvas = document.getElementById("diagram");
+myCanvas.width = 300;
+myCanvas.height = 300;
 
-var ctx = myCanvas.getContext("2d");
-
+const ctx = myCanvas.getContext("2d");
 
 
-var myAnswers = {
-    "right answers": 5,
-    "wrong answers": 5,
+
+const myAnswers = {
+    "right answers": 3,
+    "wrong answers": 7,
 };
 
-var myDougnutChart = new functions.Piechart(
+const myDougnutChart = new functions.Piechart(
     {
         canvas: diagram,
         data: myAnswers,
