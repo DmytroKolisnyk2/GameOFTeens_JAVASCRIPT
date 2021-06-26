@@ -321,6 +321,6 @@ export default [
             answer3: "4",
             answer4: "3",
             rightAnswer: '4',
-        }, ,
+        }, 
     ],
 ];

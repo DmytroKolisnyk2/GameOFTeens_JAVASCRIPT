@@ -1,7 +1,6 @@
 import questions from './arrayTests.js';
 
 const answersArray = ["", "", "", "", "", "", "", "", "", ""];
-let questionIndex = 0;
 export const addAnswer = function () {
     const inputRadios = document.querySelectorAll('.question__form--variant');
 
@@ -120,8 +119,10 @@ export const checkFinal = () => {
         if (item === questions[testType - 1][index].rightAnswer) acc++;
         return acc;
     }, 0);
-    document.querySelector('.results__percent--js').textContent = `${result / questions[testType - 1].length*100}`;
+    document.querySelector('.results__percent--js').textContent = `${Math.round(result / questions[testType - 1].length*100)}`;
     document.querySelector('.question').classList.add('hidden-modal');
     document.querySelector('.results').classList.remove('hidden-modal');
+    questionRef.classList.add('hidden-modal');
+
 };
 
