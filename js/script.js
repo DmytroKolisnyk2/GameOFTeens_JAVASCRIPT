@@ -43,6 +43,14 @@ const keyCloseModal = (event) => {
         window.removeEventListener("keydown", keyCloseModal);
     }
 };
+
+const keyCloseModal2 = (event) => {
+    if (event.code === "Escape") {
+        document.querySelector('.backdrop_how-to-use_modal').classList.add("hidden-modal");
+        window.removeEventListener("keydown", keyCloseModal3);
+    }
+};
+
 const keyCloseModal3 = (event) => {
     if (event.code === "Escape") {
         document
@@ -56,6 +64,13 @@ const backDropCloseModal = (event) => {
         event.currentTarget.classList.add("hidden-modal");
     }
 };
+
+document.querySelector('.backdrop_how-to-use_modal').addEventListener('click', backDropCloseModal);
+
+document.querySelector('.about_test').addEventListener('click', () => {
+    window.addEventListener('keydown', keyCloseModal2);
+    document.querySelector('.backdrop_how-to-use_modal').classList.remove('hidden-modal');
+});
 
 document.querySelectorAll(".settings_btn--js").forEach((btn) =>
     btn.addEventListener("click", () => {

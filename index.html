@@ -25,10 +25,13 @@
     </div>
     <main class="main">
         <section class="start modal">
-            <button class="settings_btn settings_btn--js">
-                <img class="settings_btn_img" src="./img/logo.jpg"
-                    alt="logo_team" />
-            </button>
+            <div class="wrapper_btn_start">
+                <button class="settings_btn settings_btn--js">
+                    <img class="settings_btn_img" class="settings-modal__audio-ico hidden-modal" src="./img/logo.jpg"
+                        alt="logo_team" />
+                </button>
+                <button class="about_test">?</button>
+            </div>
             <div class="start__content-wrapper">
                 <h2 class="start_screen_title">IT тест від команди HOPE</h2>
                 <div class="start__controls-wrapper">
@@ -125,6 +128,7 @@
             <h2 class="question__title">Расшифровка css?</h2>
             <form class="question__form">
                 <div class="question__form--label-wrapper">
+
                     <!-- <input checked type="radio" class="question__form--variant" id="question__form--answer1" data-question-index="1" name="answer" value="1">
                     <label class="question__form--label" for="question__form--answer1" id="question__form--label-1"><input class='question__form-input' type='text' placeholder='your answer here'></label>
                 </div>
@@ -169,8 +173,7 @@
                 <ul class="question__controls-wrapper">
                     <li class="question__controls-item"><button class="question__btn question__btn--arrow"
                             data-value='left'>&#60;</button></li>
-                    <li class="question__controls-item"><button
-                            class="question__btn question__btn--finish">Фініш</button></li>
+                    <li class="question__controls-item"><button class="question__btn question__btn--finish">Фініш</button></li>
                     <li class="question__controls-item"><button class="question__btn question__btn--arrow"
                             data-value='right'>&#62;</button></li>
                 </ul>
@@ -210,6 +213,23 @@
                 </div>
             </div>
         </section>
+        <section id="how-to-use" class="backdrop_how-to-use_modal modal hidden-modal">
+            <div class="how-to-use modal">
+                <div data-modal="how-to-use" class="how-to-use_close close-btn--js close-modal-btn">
+                    <picture><svg class="how-to-use-modal__close-btn">
+                            <use href="./img/symbol-defs.svg#icon-cross"></use>
+                        </svg></picture>
+                </div>
+                <h2 class="how-to-use__headline">Як використовувати сайт?</h2>
+                <div class="how-to-use__wrapper">
+                    <p class="how-to-use__text">First, click the "play" button. You will see a table where you need to
+                        select the number of cards and time. If you are not playing alone, go to the next "multiplayer"
+                        function, it is next to the "single player" function. You need to choose the number of cards and
+                        the number of players. Then click "start". You see the cards on the screen. You must find two
+                        identical cards for the time you have chosen.</p>
+                </div>
+            </div>
+        </section>
         <!-- <div class="question__form--label-wrapper">
             <input checked type="radio" class="question__form--variant" id="question__form--answer1" data-question-index="1" name="answer" value="1">
             <label class="question__form--label" for="question__form--answer1" id="question__form--label-1"><input type='text' placeholder='your question here' value='3'></label>
@@ -226,6 +246,7 @@
             <input type="radio" class="question__form--variant" id="question__form--answer4" data-question-index="4" name="answer" value="4">
             <label class="question__form--label" id="question__form--label-4" for="question__form--answer4"><input type='text' placeholder='your question here' value='1'></label>
         </div> -->
+
     </main>
     <!-- <div class="audio">
         <audio data-volume="0.75" loop="loop" src="./music/gameplay.mp3" class="audio__game-play"></audio>

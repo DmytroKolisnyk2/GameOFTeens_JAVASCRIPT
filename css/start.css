@@ -87,9 +87,6 @@
    z-index: 10;
    width: 65px;
    height: 65px;
-   position: absolute;
-   top: 25px;
-   left: 25px;
    background-color: transparent;
    transition: 400ms linear;
 }
@@ -104,7 +101,7 @@
 }
 
 .settings_btn:hover .settings_btn_img {
-   transform: scale(1.2) rotate(90deg);
+   transform: scale(1.2) rotate(-90deg);
 }
 
 .hidden-modal {
@@ -227,6 +224,31 @@
    cursor: pointer;
 }
 
+.about_test {
+   width: 95px;
+    height: 95px;
+    background-color: var(--main-blue);
+    color: #fff;
+    transition: 200ms linear;
+    border-radius: 50%;
+    font-size: 50px;
+    font-weight: 600;
+    border: 3px solid #fff;
+}
+
+.about_test:hover {
+   transform: scale(1.2) rotate(90deg);
+}
+
+.wrapper_btn_start {
+   width: 215px;
+   position: absolute;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
 @media screen and (max-height: 700px) {
    .start__controls {
       border: 2px solid transparent;
@@ -252,6 +274,16 @@
    .settings_btn {
       width: 35px;
       height: 35px;
+   }
+
+   .about_test {
+      width: 65px;
+       height: 65px;
+       font-size: 45px;
+   }
+
+   .wrapper_btn_start {
+      width: 150px;
    }
 
    .settings_btn_img {
@@ -462,6 +494,16 @@
    .settings_btn_img {
       width: 55px;
       height: 55px;
+   }
+
+   .about_test {
+      width: 55px;
+       height: 55px;
+       font-size: 35px;
+   }
+
+   .wrapper_btn_start {
+      width: 130px;
    }
    .settings-modal__close-btn {
       top: 5px;
