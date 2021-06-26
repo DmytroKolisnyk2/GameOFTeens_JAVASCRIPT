@@ -127,6 +127,3 @@ document.querySelector('.results_btn_menu--menu').addEventListener('click', () =
     document.querySelector('.results').classList.add('hidden-modal');
     document.querySelector('.menu').classList.remove('hidden-modal');
 });
-document.querySelector('.start').classList.add('hidden-modal');
-document.querySelector('.results').classList.remove('hidden-modal');
-// functions.makeQuestion(1, 1);
