@@ -7,6 +7,8 @@
     flex-wrap: wrap;
     align-items: center;
     transition: var(--main-animation);
+    overflow: auto;
+    position: relative;
 }
 
 .menu__content-wrapper {
@@ -46,25 +48,21 @@
     transition: var(--main-animation);
 }
 .test-selection__plus {
-    font-size: 38px;
-    width: 55px;
-    height: 55px;
-    margin: 0 auto;
-
-    border: 3px solid var(--main-maroon);
-    border-radius: var(--main-br);
-    background-color: var(--main-grey);
-
-    color: var(--main-grey);
-    border-radius: 50%;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: 0.5s ease-in-out;
-    font-weight: 800;
-    background-color: transparent;
- 
-    position: relative;
+     font-size: 32px; 
+    width: 200px; 
+    height: 50px; 
+    margin: 0 auto; 
+    border: 3px solid var(--main-maroon); 
+    border-radius: var(--main-br); 
+    background-color: var(--main-grey); 
+    position: absolute; 
+    color: var(--main-grey); 
+    cursor: pointer; 
+    transition: 0.5s ease-in-out; 
+    /* position: relative;  */
     color: var(--main-maroon);
+    right: 20px; 
+    top: 100px;
 }
 .test-selection__plus:hover {
     opacity: 1;
