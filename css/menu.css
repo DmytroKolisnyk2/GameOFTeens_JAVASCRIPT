@@ -47,16 +47,16 @@
 }
 .test-selection__plus {
     font-size: 32px;
-    width: 50px;
+    width: 200px;
     height: 50px;
     margin: 0 auto;
 
     border: 3px solid var(--main-maroon);
     border-radius: var(--main-br);
     background-color: var(--main-grey);
-
+    position: sticky;
+    
     color: var(--main-grey);
-    border-radius: 50%;
     cursor: pointer;
     transition: 0.5s ease-in-out;
     position: relative;
@@ -76,6 +76,11 @@
         font-size: 35px;
         height: 120px;
     }
+
+    .test-selection__plus {
+        width: 150px;
+        height: 40px;
+}
 }
 
 @media screen and (max-width: 468px) {
@@ -85,5 +90,11 @@
     }
     .menu__headline {
         font-size: 30px;
+    }
+
+    .test-selection__plus {
+        width: 100px;
+        height: 30px;
+        padding-bottom: 10px;
     }
 }
