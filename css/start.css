@@ -226,14 +226,14 @@
 
 .about_test {
    width: 95px;
-    height: 95px;
-    background-color: var(--main-blue);
-    color: #fff;
-    transition: 200ms linear;
-    border-radius: 50%;
-    font-size: 50px;
-    font-weight: 600;
-    border: 3px solid #fff;
+   height: 95px;
+   background-color: var(--main-blue);
+   color: #fff;
+   transition: 200ms linear;
+   border-radius: 50%;
+   font-size: 50px;
+   font-weight: 600;
+   border: 3px solid #fff;
 }
 
 .about_test:hover {
@@ -243,10 +243,10 @@
 .wrapper_btn_start {
    width: 215px;
    position: absolute;
-    top: 25px;
-    left: 25px;
-    display: flex;
-    justify-content: space-between;
+   top: 25px;
+   left: 25px;
+   display: flex;
+   justify-content: space-between;
 }
 
 .authors_content {
@@ -328,7 +328,7 @@
    font-weight: 400;
    font-size: 14px;
    color: #000;
-   margin: 0 0 5px 0
+   margin: 0 0 5px 0;
 }
 
 .authors_footer {
@@ -385,7 +385,7 @@
    .settings-modal__close-btn {
       top: 0;
       right: 5px;
-   }   
+   }
    .start__controls {
       border: 2px solid transparent;
       font-size: 35px;
@@ -414,8 +414,8 @@
 
    .about_test {
       width: 65px;
-       height: 65px;
-       font-size: 45px;
+      height: 65px;
+      font-size: 45px;
    }
 
    .wrapper_btn_start {
@@ -478,7 +478,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
    .authors_content {
       background-color: var(--main-grey);
       border: 1px black solid;
@@ -536,8 +535,8 @@
 
    .about_test {
       width: 55px;
-       height: 55px;
-       font-size: 35px;
+      height: 55px;
+      font-size: 35px;
    }
 
    .wrapper_btn_start {
@@ -572,7 +571,7 @@
       text-transform: uppercase;
       margin: 15px 0 0;
    }
-   
+
    .authors_wrapper {
       padding-top: 15px;
       display: flex;
@@ -581,22 +580,22 @@
       justify-content: space-between;
       width: 100%;
    }
-   
+
    .authors_card {
       width: 100px;
       margin: 0 auto 10px auto;
    }
-   
+
    .authors_img {
       margin-bottom: 10px;
       width: 100px;
       height: 122px;
    }
-   
+
    .authors_name {
       margin-bottom: 5px;
    }
-   
+
    .authors_text {
       width: 100%;
       font-family: "Roboto", sans-serif;
@@ -605,7 +604,7 @@
       color: #000;
       margin: 0;
    }
-   
+
    .authors_footer {
       position: absolute;
       bottom: 5px;
@@ -613,11 +612,11 @@
       display: flex;
       align-items: center;
    }
-   
+
    .authors_footer__text {
       font-size: 0;
    }
-   
+
    .authors-footer__img {
       border-radius: 50%;
       position: relative;

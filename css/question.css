@@ -3,17 +3,17 @@
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   width: 90%;
+   width: 88%;
    background-color: var(--main-blue);
    border-radius: var(--main-br);
    padding: 15px 0 20px;
    transition: var(--main-animation);
-   max-width: 1000px;
+   max-width: 900px;
    border: 3px solid var(--main-maroon);
 }
 
 .question__form {
-   width: 90%;
+   width: 80%;
    margin: 0 auto;
    text-align: left;
 }
@@ -176,7 +176,7 @@
    font-family: var(--main-font);
 }
 .question-input {
-   width: 90%;
+   width: 88%;
    max-width: 700px;
    text-align: left;
    padding: 15px;

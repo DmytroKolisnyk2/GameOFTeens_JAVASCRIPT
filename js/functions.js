@@ -4,7 +4,7 @@ setTimeout(() => {
     questions = JSON.parse(localStorage.getItem('user-tests'))
 }, 100);
 export const addAnswer = function () {
-      const inputRadios = document.querySelectorAll(".question__form--variant");
+    const inputRadios = document.querySelectorAll(".question__form--variant");
     const answersArray = JSON.parse(localStorage.getItem("answers"));
     let questionIndex = localStorage.getItem("question-index");
     questions = JSON.parse(localStorage.getItem('user-tests'))
@@ -236,7 +236,8 @@ export const createTestAddBtn = () => {
     const userTest = JSON.parse(localStorage.getItem('user-tests'));
     if (currentTest.length < 4) {
         alert("Будь ласка, зробіть більше тестів")
-        return;};
+        return;
+    };
     userTest.push(currentTest)
     document.querySelector('.question-input').classList.add('hidden-modal');
     const wrapperBtnRef = document.querySelector('.menu__test-selection-wrapper');
@@ -244,7 +245,7 @@ export const createTestAddBtn = () => {
     wrapperBtnRef.insertAdjacentHTML(
         'beforeend', btnString
     );
-    
+
     document.querySelector('.menu').classList.remove('hidden-modal');
     localStorage.setItem('user-tests', JSON.stringify(userTest));
     // console.log(JSON.parse(localStorage.getItem('user-tests')));

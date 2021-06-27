@@ -78,52 +78,44 @@
    margin-bottom: 30px;
 }
 @media screen and (max-width: 768px) {
-#diagram {
-   height: 200px;
-   width: 200px;
-  
+   #diagram {
+      height: 200px;
+      width: 200px;
+   }
+   .results__percent {
+      font-size: 20px;
+   }
+   .results_text_percent {
+      font-size: 18px;
+   }
 }
-.results__percent {
-
-   font-size: 20px;
-
-}
-.results_text_percent {
-   
-   font-size: 18px;
-
-}
-}@media screen and (max-width: 520px) {
-#diagram {
-   height: 180px;
-   width: 180px;
-  
-}
-.results__percent {
-
-   font-size: 18px;
-
-}
-.results_text_percent {
-   margin-top: 0;
-   font-size: 16px;
-
-}
-.results__btn-text {
-   font-size: 16px;
-}
+@media screen and (max-width: 520px) {
+   #diagram {
+      height: 180px;
+      width: 180px;
+   }
+   .results__percent {
+      font-size: 18px;
+   }
+   .results_text_percent {
+      margin-top: 0;
+      font-size: 16px;
+   }
+   .results__btn-text {
+      font-size: 16px;
+   }
 }
 
 @media screen and (max-width: 430px) {
-    #diagram {
-       height: 160px;
-       width: 160px;
-    }
+   #diagram {
+      height: 160px;
+      width: 160px;
+   }
 }
 
 @media screen and (max-width: 375px) {
-    #diagram {
-       height: 125px;
-       width: 125px;
-    }
+   #diagram {
+      height: 125px;
+      width: 125px;
+   }
 }
