@@ -148,9 +148,8 @@
    right: 15px;
 }
 @media screen and (max-width: 768px) {
-
    .question {
-      max-width: 600px; 
+      max-width: 600px;
    }
 
    .question__form--label {
@@ -167,7 +166,6 @@
    font-weight: 700;
    background-color: var(--main-red);
    font-family: var(--main-font);
-
 }
 .question-input__btn--make-test {
    width: 200px;
@@ -176,29 +174,32 @@
    background-color: var(--main-grey);
    font-family: var(--main-font);
 }
-.question-input{
-    max-width: 700px;
-    text-align: left;
-    padding: 15px;
+.question-input {
+   width: 90%;
+   max-width: 700px;
+   text-align: left;
+   padding: 15px;
 }
 .question-input__input {
-    font-size: 22px;
-    font-weight: 500;
+   font-size: 22px;
+   font-weight: 500;
 }
 .question-input--variant {
    height: 25px;
    width: 25px;
 }
-.question-input__headline-input, .question-input__input {
+.question-input__headline-input,
+.question-input__input {
    background-color: transparent;
    border-radius: var(--main-br);
    padding: 10px;
-   transition:var(--main-animation);
+   transition: var(--main-animation);
    color: var(--main-grey);
    width: calc(100% - 55px);
 }
 
-.question-input__headline-input:focus, .question-input__input:focus {
+.question-input__headline-input:focus,
+.question-input__input:focus {
    background-color: var(--main-maroon);
 }
 .question-input__headline-input {
@@ -211,7 +212,6 @@
 }
 
 @media screen and (max-width: 425px) {
-   
    .question-input__headline-input {
       font-weight: 600;
       font-size: 26px;
@@ -237,7 +237,6 @@
 }
 
 @media screen and (max-width: 360px) {
-   
    .question-input__headline-input {
       font-weight: 600;
       font-size: 22px;

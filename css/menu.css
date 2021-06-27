@@ -55,7 +55,7 @@
     border: 3px solid var(--main-maroon); 
     border-radius: var(--main-br); 
     background-color: var(--main-grey); 
-    position: absolute; 
+    position: fixed; 
     color: var(--main-grey); 
     cursor: pointer; 
     transition: 0.5s ease-in-out; 
