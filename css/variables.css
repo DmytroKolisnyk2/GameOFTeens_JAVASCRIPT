@@ -21,7 +21,7 @@
     visibility: hidden;
     z-index: -1;
     transition: 400ms linear;
-    display: none;
+    /* display: none; */
 }
 
 .modal {
