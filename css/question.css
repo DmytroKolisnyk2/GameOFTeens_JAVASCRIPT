@@ -9,7 +9,7 @@
    padding: 15px 0 20px;
    transition: var(--main-animation);
    max-width: 1000px;
-   border: 3px solid var(--main-maroon); 
+   border: 3px solid var(--main-maroon);
 }
 
 .question__form {
@@ -55,15 +55,15 @@
    margin-top: 10px;
 }
 .question__form-input {
-    position: fixed;
-    padding: 5px;
-    border-radius: var(--main-br);
-    font-size: 26px;
-    font-weight: 700;
-    font-family: var(--main-font);
-    color: var(--main-grey);
-    background-color: var(--main-purple);
-    cursor: pointer;
+   position: fixed;
+   padding: 5px;
+   border-radius: var(--main-br);
+   font-size: 26px;
+   font-weight: 700;
+   font-family: var(--main-font);
+   color: var(--main-grey);
+   background-color: var(--main-purple);
+   cursor: pointer;
 }
 .question__submit {
    margin: 0 auto;
@@ -155,11 +155,53 @@
    
 } */
 
-.question__form--label {
-   margin-left: 30px;
-   font-size: 18px;
+   .question__form--label {
+      margin-left: 30px;
+      font-size: 18px;
+   }
+   .question__title {
+      font-size: 24px;
+   }
 }
-.question__title {
-   font-size: 24px;
+.question__btn--plus {
+   font-size: 40px;
+   font-weight: 700;
+   background-color: var(--main-red);
+   font-family: var(--main-font);
 }
+.question__btn--make-test {
+   width: 200px;
+   font-size: 22px;
+   font-weight: 700;
+   background-color: var(--main-grey);
+   font-family: var(--main-font);
+}
+.question-input{
+    max-width: 700px;
+    text-align: left;
+}
+.question-input__input {
+    font-size: 22px;
+    font-weight: 500;
+}
+.question-input--variant {
+   height: 25px;
+   width: 25px;
+}
+.question-input__headline-input, .question-input__input {
+   background-color: transparent;
+   border-radius: var(--main-br);
+   padding: 5px;
+   transition:var(--main-animation);
+   color: var(--main-grey);
+   width: calc(100% - 55px);
+}
+.question-input__headline-input:focus, .question-input__input:focus {
+   background-color: var(--main-maroon);
+}
+.question-input__headline-input {
+   font-size: 25px;
+   font-weight: 600;
+}
+.question-input__form {
 }

@@ -5,6 +5,7 @@
    padding: 20px;
    transition: var(--main-animation);
    border-radius: var(--main-br);
+   border: 3px solid var(--main-maroon);
 }
 
 .results__percent {
