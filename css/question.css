@@ -162,16 +162,14 @@
    }
 }
 
-
-
-.question__btn--plus {
+.question-input__btn--plus {
    font-size: 40px;
    font-weight: 700;
    background-color: var(--main-red);
    font-family: var(--main-font);
 
 }
-.question__btn--make-test {
+.question-input__btn--make-test {
    width: 200px;
    font-size: 22px;
    font-weight: 700;

@@ -1,11 +1,17 @@
-import questions from "./arrayTests.js";
+// import questions from "./arrayTests.js";
+console.log(localStorage.getItem('user-tests'));
+const questions = JSON.parse(localStorage.getItem('user-tests'));
 
 export const addAnswer = function () {
-    const inputRadios = document.querySelectorAll(".question__form--variant");
+      const inputRadios = document.querySelectorAll(".question__form--variant");
     const answersArray = JSON.parse(localStorage.getItem("answers"));
     let questionIndex = localStorage.getItem("question-index");
-    console.log(answersArray);
-    answersArray.forEach(element => { if (element) element = '' });
+    // console.log(answersArray);
+    // console.log(section - 1);
+
+    answersArray.forEach((element) => {
+        if (element) element = "";
+    });
     for (let i = 0, length = inputRadios.length; i < length; i++) {
         if (inputRadios[i].checked) {
             answersArray.splice(localStorage.getItem("question-index") - 1, 1, inputRadios[i].value);
@@ -19,6 +25,11 @@ document.querySelector(".question__submit").addEventListener("click", addAnswer)
 const questionRef = document.querySelector(".question--js");
 export const makeQuestion = (section, questionIndex) => {
     questionRef.classList.remove("hidden-modal");
+    const questions = JSON.parse(localStorage.getItem('user-tests'));
+
+    console.log(questions);
+    console.log(section - 1);
+    console.log(questions[section - 1]);
     const questionPath = questions[section - 1][questionIndex - 1];
     console.log(questionPath);
     questionRef.querySelector(".question__title").textContent = questionPath.headlineOfQuestion;
@@ -45,7 +56,7 @@ export const makeQuestion = (section, questionIndex) => {
 
 export const onClickBtnArrow = (event) => {
     if (event.target.dataset.value === "right") {
-        if (+localStorage.getItem("question-index") === questions[localStorage.getItem('test-type') - 1].length) {
+        if (+localStorage.getItem("question-index") === questions[localStorage.getItem("test-type") - 1].length) {
             return;
         }
         localStorage.setItem("question-index", +localStorage.getItem("question-index") + 1);
@@ -61,7 +72,7 @@ export const onClickBtnArrow = (event) => {
 };
 
 export const onClickBtnSubmit = () => {
-    if (+localStorage.getItem("question-index") === questions[localStorage.getItem('test-type') - 1].length) {
+    if (+localStorage.getItem("question-index") === questions[localStorage.getItem("test-type") - 1].length) {
         return;
     }
     localStorage.setItem("question-index", +localStorage.getItem("question-index") + 1);
@@ -108,7 +119,6 @@ myCanvas.height = 300;
 
 const ctx = myCanvas.getContext("2d");
 
-
 export const checkFinal = () => {
     const answersArray = JSON.parse(localStorage.getItem("answers"));
     const testType = localStorage.getItem("test-type");
@@ -138,8 +148,9 @@ export const checkFinal = () => {
     document.querySelector(".question--js").classList.add("hidden-modal");
     document.querySelector(".results").classList.remove("hidden-modal");
     document.querySelector(".question__counter").classList.add("hidden-modal");
-    console.log(percentCorrectAnswers === 100 ? 99.7 : percentCorrectAnswers);
-    const correctAnswers = percentCorrectAnswers === 100 ? 99.7 : percentCorrectAnswers;
+    let correctAnswers = percentCorrectAnswers === 100 ? 99.7 : percentCorrectAnswers;
+    correctAnswers = percentCorrectAnswers === 0 ? 0.3 : percentCorrectAnswers;
+
     const myAnswers = {
         "right answers": correctAnswers,
         "wrong answers": 100 - correctAnswers,
@@ -154,28 +165,28 @@ export const checkFinal = () => {
     myDougnutChart.draw();
 };
 export const startTest = (event) => {
-    if (event.target === event.currentTarget) return;
-    document.querySelector('.menu').classList.add('hidden-modal');
+    if (event.target === event.currentTarget || event.target.classList.contains("test-selection__plus")) return;
+    document.querySelector(".menu").classList.add("hidden-modal");
     makeQuestion(+event.target.dataset.section, 1);
-    localStorage.setItem('question-index', 1);
-    localStorage.setItem('test-type', +event.target.dataset.section);
+    localStorage.setItem("question-index", 1);
+    localStorage.setItem("test-type", +event.target.dataset.section);
     if (+event.target.dataset.section === 1) {
-        document.querySelector('.results_about_the_course_title').textContent = "JavaScript";
+        document.querySelector(".results_about_the_course_title").textContent = "JavaScript";
     }
     if (+event.target.dataset.section === 2) {
-        document.querySelector('.results_about_the_course_title').textContent = "Html / CSS";
+        document.querySelector(".results_about_the_course_title").textContent = "Html / CSS";
     }
     if (+event.target.dataset.section === 3) {
-        document.querySelector('.results_about_the_course_title').textContent = "Java";
+        document.querySelector(".results_about_the_course_title").textContent = "Java";
     }
     console.log(event.target.dataset.section);
     if (+event.target.dataset.section === 4) {
-        document.querySelector('.results_about_the_course_title').innerHTML = "Python";
+        document.querySelector(".results_about_the_course_title").innerHTML = "Python";
     }
     const answersArray = [];
     answersArray.length = questions[event.target.dataset.section - 1].length;
     localStorage.setItem("answers", JSON.stringify(answersArray));
-}
+};
 export const checkVolume = (event) => {
     window.localStorage.setItem("volume", event.target.value / 20);
     if (+event.target.value === 0) {
@@ -186,4 +197,47 @@ export const checkVolume = (event) => {
         event.target.parentNode.querySelector("#mute").classList.add("hidden-modal");
     }
     [...document.querySelector(".audio").children].forEach((audio) => (audio.volume = (+audio.dataset.volume * event.target.value) / 20));
-}
+};
+export const createTest = () => {
+    document.querySelector(".question-input").classList.remove("hidden-modal");
+    document.querySelector(".menu").classList.add("hidden-modal");
+    localStorage.setItem('input-question-index', 1)
+    localStorage.setItem('current-test', '[]');
+};
+export const createTestPlusBtn = () => {
+    let currentTestRef = JSON.parse(localStorage.getItem('current-test'));
+    const formRef = document.querySelector(".question-input")
+
+    const testString = {
+        headlineOfQuestion: document.querySelector('.question-input__headline-input').value,
+        answer1: formRef.querySelector('.question-input__input--1').value,
+        answer2: formRef.querySelector('.question-input__input--2').value,
+        answer3: formRef.querySelector('.question-input__input--3').value,
+        answer4: formRef.querySelector('.question-input__input--4').value,
+        rightAnswer: [...formRef.querySelectorAll("[type='radio']")].find((checkbox) =>
+            checkbox.checked
+        ).dataset.questionIndex,
+    };
+    console.log(testString);
+    currentTestRef.push(testString)
+    localStorage.setItem('current-test', JSON.stringify(currentTestRef));
+    formRef.querySelectorAll("[type='text']").forEach((element) => {
+        element.value = '';
+    });
+    formRef.querySelector("[type='radio']").checked = true;
+
+};
+export const createTestAddBtn = () => {
+    const currentTest = JSON.parse(localStorage.getItem('current-test'));
+    const userTest = JSON.parse(localStorage.getItem('user-tests'));
+    userTest.push(currentTest)
+    document.querySelector('.question-input').classList.add('hidden-modal');
+    const wrapperBtnRef = document.querySelector('.menu__test-selection-wrapper');
+    const btnString = ` <button data-section='${wrapperBtnRef.children.length}' type="button" class="select-btn--js test-selection__btn">Test-${wrapperBtnRef.children.length}</button>`;
+    wrapperBtnRef.insertAdjacentHTML(
+        'beforeend', btnString
+    );
+    document.querySelector('.menu').classList.remove('hidden-modal');
+    localStorage.setItem('user-tests', userTest);
+    // console.log(JSON.parse(localStorage.getItem('user-tests')));
+};

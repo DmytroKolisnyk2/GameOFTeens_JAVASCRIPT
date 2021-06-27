@@ -1,4 +1,5 @@
 import * as functions from "./functions.js";
+import questions from "./arrayTests.js";
 
 const testString = `<div class="question__form--label-wrapper">
 <input checked type="radio" class="question__form--variant" id="question__form--answer1" data-question-index="1" name="answer" value="1">
@@ -139,10 +140,14 @@ document.querySelector('.question__submit').addEventListener('click', functions.
 document.querySelector('.question__btn--finish').addEventListener('click', functions.checkFinal);
 document.querySelector('.results_btn_menu--restart').addEventListener('click', () => {
     document.querySelector('.results').classList.add('hidden-modal');
-    functions.makeQuestion(localStorage.getItem('test-type'), 1);
+    functions.makeQuestion(+localStorage.getItem('test-type'), 1);
     localStorage.setItem('question-index', 1);
 });
 document.querySelector('.results_btn_menu--menu').addEventListener('click', () => {
     document.querySelector('.results').classList.add('hidden-modal');
     document.querySelector('.menu').classList.remove('hidden-modal');
 });
+document.querySelector('.test-selection__plus').addEventListener('click', functions.createTest);
+document.querySelector('.question-input__btn--plus').addEventListener('click', functions.createTestPlusBtn);
+document.querySelector('.question-input__btn--make-test').addEventListener('click', functions.createTestAddBtn);
+localStorage.setItem('user-tests', JSON.stringify(questions))
