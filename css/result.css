@@ -40,12 +40,10 @@
    font-weight: 400;
    font-family: var(--main-font);
 }
-.result_about_the_course_wrapper {
-}
+
 .result_btn_wrapper {
    display: flex;
    justify-content: space-around;
-   /* margin: 30px; */
 }
 .results_btn_menu {
    background-color: var(--main-blue);
@@ -114,4 +112,18 @@
 .results__btn-text {
    font-size: 16px;
 }
+}
+
+@media screen and (max-width: 430px) {
+    #diagram {
+       height: 160px;
+       width: 160px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #diagram {
+       height: 125px;
+       width: 125px;
+    }
 }

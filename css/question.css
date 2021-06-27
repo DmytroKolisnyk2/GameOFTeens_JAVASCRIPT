@@ -148,10 +148,11 @@
    right: 15px;
 }
 @media screen and (max-width: 768px) {
+
    .question {
       max-width: 600px; 
    }
-   
+
    .question__form--label {
       margin-left: 30px;
       font-size: 18px;
@@ -160,6 +161,9 @@
       font-size: 24px;
    }
 }
+
+
+
 .question__btn--plus {
    font-size: 40px;
    font-weight: 700;
@@ -177,6 +181,7 @@
 .question-input{
     max-width: 700px;
     text-align: left;
+    padding: 15px;
 }
 .question-input__input {
     font-size: 22px;
@@ -189,40 +194,63 @@
 .question-input__headline-input, .question-input__input {
    background-color: transparent;
    border-radius: var(--main-br);
-   padding: 5px;
+   padding: 10px;
    transition:var(--main-animation);
    color: var(--main-grey);
    width: calc(100% - 55px);
 }
+
 .question-input__headline-input:focus, .question-input__input:focus {
    background-color: var(--main-maroon);
 }
 .question-input__headline-input {
-   font-size: 25px;
-   font-weight: 600;
-}
-.question-input__form {
-}
-}
-
-@media screen and (max-width: 700px) {
-   .question {
-      max-width: 300px;
-      width: 80%; 
-   }
-   .question__controls-wrapper {
-      width: 90%;
-   }
-   
+   font-weight: 700;
+   font-size: 32px;
+   font-family: var(--main-font);
+   text-align: center;
+   margin: 10px auto 35px auto;
+   display: block;
 }
 
-@media screen and (max-width: 320px) {
-   .question {
-      max-width: 300px;
-      width: 80%; 
-   }
-   .question__controls-wrapper {
-      width: 97%;
-   }
+@media screen and (max-width: 425px) {
    
+   .question-input__headline-input {
+      font-weight: 600;
+      font-size: 26px;
+      margin-bottom: 20px;
+   }
+   .question-input__input {
+      font-weight: 500;
+      font-size: 20px;
+   }
+   .question__buttons--wrapper {
+      width: 50%;
+      margin-top: 20px;
+   }
+   .question__btn--make-test {
+      font-size: 20px;
+   }
+   .question__btn--plus {
+      font-size: 38px;
+   }
+   .question__btn {
+      height: 50px;
+   }
+}
+
+@media screen and (max-width: 360px) {
+   
+   .question-input__headline-input {
+      font-weight: 600;
+      font-size: 22px;
+      margin: 10px auto 35px auto;
+   }
+   .question-input__input {
+      font-weight: 500;
+      font-size: 18px;
+   }
+
+   .question__buttons--wrapper {
+      width: 25%;
+   }
 }
