@@ -146,6 +146,7 @@
    color: var(--main-grey);
    top: 100px;
    right: 15px;
+   z-index: 20;
 }
 @media screen and (max-width: 768px) {
    .question {
