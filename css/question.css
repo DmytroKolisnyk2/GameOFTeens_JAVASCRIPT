@@ -93,7 +93,7 @@
 
 .question__controls-wrapper {
    margin-top: 20px;
-   width: 60%;
+   width: 50%;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -148,13 +148,10 @@
    right: 15px;
 }
 @media screen and (max-width: 768px) {
-   /* .question__form--variant {
-   left: 15px;
-   width: 15px;
-   height: 22px;
+   .question {
+      max-width: 600px; 
+   }
    
-} */
-
 .question__form--label {
    margin-left: 30px;
    font-size: 18px;
@@ -162,4 +159,26 @@
 .question__title {
    font-size: 24px;
 }
+}
+
+@media screen and (max-width: 700px) {
+   .question {
+      max-width: 300px;
+      width: 80%; 
+   }
+   .question__controls-wrapper {
+      width: 90%;
+   }
+   
+}
+
+@media screen and (max-width: 320px) {
+   .question {
+      max-width: 300px;
+      width: 80%; 
+   }
+   .question__controls-wrapper {
+      width: 97%;
+   }
+   
 }
