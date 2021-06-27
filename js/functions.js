@@ -1,20 +1,21 @@
 // import questions from "./arrayTests.js";
-console.log(localStorage.getItem('user-tests'));
-const questions = JSON.parse(localStorage.getItem('user-tests'));
-
+let questions = [];
+setTimeout(() => {
+    questions = JSON.parse(localStorage.getItem('user-tests'))
+}, 100);
 export const addAnswer = function () {
       const inputRadios = document.querySelectorAll(".question__form--variant");
     const answersArray = JSON.parse(localStorage.getItem("answers"));
     let questionIndex = localStorage.getItem("question-index");
-    // console.log(answersArray);
-    // console.log(section - 1);
-
+    questions = JSON.parse(localStorage.getItem('user-tests'))
     answersArray.forEach((element) => {
         if (element) element = "";
     });
     for (let i = 0, length = inputRadios.length; i < length; i++) {
         if (inputRadios[i].checked) {
-            answersArray.splice(localStorage.getItem("question-index") - 1, 1, inputRadios[i].value);
+            answersArray.splice(+localStorage.getItem("question-index") - 1, 1, inputRadios[i].value);
+            console.log(answersArray);
+
             localStorage.setItem("answers", JSON.stringify(answersArray));
             break;
         }
@@ -24,14 +25,10 @@ export const addAnswer = function () {
 document.querySelector(".question__submit").addEventListener("click", addAnswer);
 const questionRef = document.querySelector(".question--js");
 export const makeQuestion = (section, questionIndex) => {
+
     questionRef.classList.remove("hidden-modal");
     const questions = JSON.parse(localStorage.getItem('user-tests'));
-
-    console.log(questions);
-    console.log(section - 1);
-    console.log(questions[section - 1]);
     const questionPath = questions[section - 1][questionIndex - 1];
-    console.log(questionPath);
     questionRef.querySelector(".question__title").textContent = questionPath.headlineOfQuestion;
     const formString = `<div class="question__form--label-wrapper">
                 <input checked type="radio" class="question__form--variant" id="question__form--answer1" data-question-index="1" name="answer" value="1">
@@ -120,6 +117,8 @@ myCanvas.height = 300;
 const ctx = myCanvas.getContext("2d");
 
 export const checkFinal = () => {
+    questions = JSON.parse(localStorage.getItem('user-tests'))
+
     const answersArray = JSON.parse(localStorage.getItem("answers"));
     const testType = localStorage.getItem("test-type");
     console.log(answersArray);
@@ -165,6 +164,8 @@ export const checkFinal = () => {
     myDougnutChart.draw();
 };
 export const startTest = (event) => {
+    const questions = JSON.parse(localStorage.getItem('user-tests'));
+
     if (event.target === event.currentTarget || event.target.classList.contains("test-selection__plus")) return;
     document.querySelector(".menu").classList.add("hidden-modal");
     makeQuestion(+event.target.dataset.section, 1);
@@ -182,6 +183,9 @@ export const startTest = (event) => {
     console.log(event.target.dataset.section);
     if (+event.target.dataset.section === 4) {
         document.querySelector(".results_about_the_course_title").innerHTML = "Python";
+    }
+    if (+event.target.dataset.section > 4) {
+        document.querySelector(".results_about_the_course_title").innerHTML = `Test-${event.target.dataset.section}`;
     }
     const answersArray = [];
     answersArray.length = questions[event.target.dataset.section - 1].length;
@@ -230,6 +234,9 @@ export const createTestPlusBtn = () => {
 export const createTestAddBtn = () => {
     const currentTest = JSON.parse(localStorage.getItem('current-test'));
     const userTest = JSON.parse(localStorage.getItem('user-tests'));
+    if (currentTest.length < 4) {
+        alert("Будь ласка, зробіть більше тестів")
+        return;};
     userTest.push(currentTest)
     document.querySelector('.question-input').classList.add('hidden-modal');
     const wrapperBtnRef = document.querySelector('.menu__test-selection-wrapper');
@@ -237,7 +244,8 @@ export const createTestAddBtn = () => {
     wrapperBtnRef.insertAdjacentHTML(
         'beforeend', btnString
     );
+    
     document.querySelector('.menu').classList.remove('hidden-modal');
-    localStorage.setItem('user-tests', userTest);
+    localStorage.setItem('user-tests', JSON.stringify(userTest));
     // console.log(JSON.parse(localStorage.getItem('user-tests')));
 };
