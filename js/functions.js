@@ -1,4 +1,3 @@
-// import questions from "./arrayTests.js";
 let questions = [];
 setTimeout(() => {
     questions = JSON.parse(localStorage.getItem('user-tests'))
@@ -6,7 +5,6 @@ setTimeout(() => {
 export const addAnswer = function () {
     const inputRadios = document.querySelectorAll(".question__form--variant");
     const answersArray = JSON.parse(localStorage.getItem("answers"));
-    let questionIndex = localStorage.getItem("question-index");
     questions = JSON.parse(localStorage.getItem('user-tests'))
     answersArray.forEach((element) => {
         if (element) element = "";
@@ -14,8 +12,6 @@ export const addAnswer = function () {
     for (let i = 0, length = inputRadios.length; i < length; i++) {
         if (inputRadios[i].checked) {
             answersArray.splice(+localStorage.getItem("question-index") - 1, 1, inputRadios[i].value);
-            console.log(answersArray);
-
             localStorage.setItem("answers", JSON.stringify(answersArray));
             break;
         }
@@ -121,7 +117,6 @@ export const checkFinal = () => {
 
     const answersArray = JSON.parse(localStorage.getItem("answers"));
     const testType = localStorage.getItem("test-type");
-    console.log(answersArray);
     const results_textRef = document.querySelector(".results_text_percent");
     const result = answersArray.reduce((acc, item, index) => {
         if (item === questions[testType - 1][index].rightAnswer) acc++;
@@ -180,7 +175,6 @@ export const startTest = (event) => {
     if (+event.target.dataset.section === 3) {
         document.querySelector(".results_about_the_course_title").textContent = "Java";
     }
-    console.log(event.target.dataset.section);
     if (+event.target.dataset.section === 4) {
         document.querySelector(".results_about_the_course_title").innerHTML = "Python";
     }
@@ -222,7 +216,6 @@ export const createTestPlusBtn = () => {
             checkbox.checked
         ).dataset.questionIndex,
     };
-    console.log(testString);
     currentTestRef.push(testString)
     localStorage.setItem('current-test', JSON.stringify(currentTestRef));
     formRef.querySelectorAll("[type='text']").forEach((element) => {
@@ -248,5 +241,4 @@ export const createTestAddBtn = () => {
 
     document.querySelector('.menu').classList.remove('hidden-modal');
     localStorage.setItem('user-tests', JSON.stringify(userTest));
-    // console.log(JSON.parse(localStorage.getItem('user-tests')));
 };

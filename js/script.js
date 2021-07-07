@@ -76,7 +76,7 @@ document.querySelector('.about_test').addEventListener('click', () => {
 
 document.querySelectorAll(".settings_btn--js").forEach((btn) =>
     btn.addEventListener("click", () => {
-        // if (!document.querySelector(".start").classList.contains("hidden-modal")) document.querySelector(".audio__main-theme").play();
+        document.querySelector(".audio__main-theme").play();
         window.addEventListener("keydown", keyCloseModal3);
         document
             .querySelector(".backdrop_settings_modal")

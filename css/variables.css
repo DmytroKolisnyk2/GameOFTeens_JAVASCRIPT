@@ -16,12 +16,12 @@
    opacity: 0;
    top: 50%;
    left: 50%;
-   transform: translate(-50%, -50%) scale(0.8);
+   transform: translate(-50%, -50%) scale(0);
    position: absolute;
    visibility: hidden;
+   pointer-events: none;
    z-index: -1;
    transition: 400ms linear;
-   /* display: none; */
 }
 
 .modal {
